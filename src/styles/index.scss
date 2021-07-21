@@ -21,15 +21,8 @@ html, body {
 
 }
 
-p{
-    font-weight: 200 !important;
-    font-family: 'Open Sans';
-}
-
 h1,h2,h3,h4{
-    font-family: $font-main !important;
-    font-weight: 700;
-    color: $text-color;
+    font-family: $font-main;
 }
 
 #root{

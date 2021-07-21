@@ -1,29 +1,8 @@
 import styles from '../../styles/components/services.module.scss';
 import useSWR from 'swr';
+import styled from '@emotion/styled';
 import {getData} from '../../hook';
 
-const allServices = [
-    {
-        image: "https://dev.smilesdotcom.ng/wp-content/uploads/2020/09/In-patient-Services-370x211.jpg",
-        header: "In-Patient Services",
-        body: "Our serene and highly-equipped dental studio is designed to deliver unsurpassed dental solutions to both simple to complex cases."
-    },
-    {
-        image: "https://dev.smilesdotcom.ng/wp-content/uploads/2020/09/Mobile-Services-370x211.jpg",
-        header: "Mobile Services",
-        body: "We provide dental solutions to patients who are either dealing with mild dental pains, critical dental issues, or those who just want to look good."
-    },
-    {
-        image: "https://dev.smilesdotcom.ng/wp-content/uploads/2020/09/Corporate-Services-370x211.jpg",
-        header: "Corporate Services",
-        body: "We partner with health-conscious organizations to provide special dental care for their staff within the comfort of their workplace."
-    },
-    {
-        image: "https://dev.smilesdotcom.ng/wp-content/uploads/2020/09/Outreach-Support.jpg",
-        header: "Outreach Support",
-        body: "Individuals and companies organizing outreach events can also engage our services to provide basic dental care for their beneficiaries."
-    },
-]
 
 const allWhy = [
     {
@@ -48,23 +27,71 @@ const allWhy = [
     },
 ]
 
-export const Services = ({}) => {
-    const {data, error, mutate} = useSWR('services/', getData);
+const Row = styled.div({
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    padding: '10px 30px',
+    marginBottom: '50px',
+    width: '100%'
+});
+
+const Card = styled.div({
+    backgroundColor: '#ffffff',
+    margin: '0 10px',
+    boxShadow: '1px 2px 4px 1px rgba(198, 198, 198, .4)',
+    flex: '1',
+    cursor: 'pointer',
+
+    '&:hover': {
+        boxShadow: '2px 4px 6px 2px rgba(198, 198, 198, .5)',
+    }
+});
+
+const Image = styled.img({
+    objectFit: 'cover',
+    objectPosition: 'center',
+    width: '100%',
+    height: '200px',
+});
+
+const Content = styled.div({
+    padding: '40px',
+});
+
+const Title = styled.h4({
+    textAlign: 'center',
+});
+
+const Body = styled.div({
+    textAlign: 'center',
+    textJustify: 'inter-word',
+    fontFamily: 'Open Sans',
+    fontWeight: '300',
+    marginTop: '10px',
+});
+
+export const Services = () => {
+    const {data, error} = useSWR('services/', getData);
     return (
-        <div id={styles.row}>
+        <Row>
             {!error && data && data?.data?.map((service, i) => <Service key={service.header+i} delay={i+1} {...service} />)}
-        </div>
+        </Row>
     )
 }
 
 export const Service = ({image_path, title, body, delay, animation}) => (
-    <div className={`animate__animated animate__delay-${delay}s ${animation} ${styles.card}`}>
-        <img src={`https://smilesdotcom-api.herokuapp.com${image_path}`} alt="service" />
-        <div className={styles.content}>
-            <h4>{title}</h4>
-            <div className={styles.truncate} dangerouslySetInnerHTML={{__html: body}} />
-        </div>
-    </div>
+    <Card 
+        className={`animate__animated animate__delay-${delay}s ${animation}`}
+        onClick={() => window.location.href='/services'}
+    >
+        <Image src={`https://smilesdotcom-api.herokuapp.com${image_path}`} alt="service" />
+        <Content>
+            <Title>{title}</Title>
+            <Body className={styles.truncate} dangerouslySetInnerHTML={{__html: body}} />
+        </Content>
+    </Card>
 )
 
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
+import styled from '@emotion/styled';
 
 import { AppointmentForm } from '../components/appointment';
 import { LinkButton } from '../components/buttons';
@@ -8,6 +9,27 @@ import Sliders from '../components/slides';
 import { Testimonials } from '../components/testimonials';
 import styles from '../styles/index.module.scss';
 import { Footer } from '../components/footer';
+
+const Welcome = styled.p({
+    fontWeight: '500',
+    fontSize: '20px',
+})
+
+const Smilesdotcom = styled.h2({
+    fontWeight: '400',
+    fontSize: '35px',
+    marginBottom: '20px',
+    fontFamily: 'Merienda One',
+})
+
+const Body = styled.p({
+    textAlign: 'justify',
+    textJustify: 'inter-word',
+    maxWidth: '500px',
+    fontSize: '18px',
+    fontWeight: '400',
+    fontFamily: 'Montserrat'
+})
 
 export const Index = ({}) => {
 
@@ -20,15 +42,15 @@ export const Index = ({}) => {
                 
                 <div id={styles.about_cont}>
                     <div id={styles.about_left}>
-                        <p id={styles.welcome}>Welcome To</p>
-                        <h2 id={styles.header}>SMILESDOTCOM DENTAL</h2>
-                        <p id={styles.body}>
+                        <Welcome>Welcome To</Welcome>
+                        <Smilesdotcom>SMILESDOTCOM DENTAL</Smilesdotcom>
+                        <Body>
                             If what you are looking for is high-quality dental 
                             services that is delivered by seasoned and friendly 
                             professionals in a very serene environment – you are 
                             not only at the right place, you are at the best place 
                             – and we are delighted to have you here!
-                        </p>
+                        </Body>
                     </div>
                     <div id={styles.about_right}>
                         <AppointmentForm />
