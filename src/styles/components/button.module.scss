@@ -1,0 +1,31 @@
+@import '../variables.scss';
+
+.button{
+    background-color: $danger;
+    min-width: 150px;
+    padding: 15px 10px;
+    color: $text-color-white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none !important;
+    border-radius: 10px;
+    box-shadow: 1px 2px 4px 1px rgba($color: #c6c6c6, $alpha: .2);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase !important;
+    outline: none;
+    border: none;
+    &:link{
+        text-decoration: underline;
+    }
+    &:hover{
+        text-decoration: none;
+    }
+    &:active{
+        text-decoration: none;
+        color: $text-color-white;
+        box-shadow: none;
+    }
+}

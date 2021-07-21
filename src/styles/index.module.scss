@@ -1,0 +1,191 @@
+@import './variables.scss';
+@import '~bootstrap/scss/bootstrap.scss';
+
+#hero{
+    width: 100%;
+    height: calc(100% - 74px);
+    min-width: 100%;
+    min-height: calc(100% - 120px);
+    max-width: 100%;
+    max-height: 100%;
+    background: #f9f9f9;
+    margin-top: 74px;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#about{
+   background: $background;
+   width: 100% !important;
+   background-image: url("../assets/background.png");
+   background-size: 100%;
+   background-position: left;
+   background-repeat:no-repeat;
+}
+
+#about_cont{
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 100px 40px ;
+}
+
+#about_left{
+    margin: 100px 0;
+    flex: 1;
+    width: 40%;
+    margin-right: 100px;
+}
+
+#about_right{
+    position: relative;
+    flex: 1;
+    width: 60%;
+}
+
+#welcome{
+    font-weight: 500 !important;
+}
+
+#body{
+    text-align: justify;
+    text-justify: inter-word;
+    max-width: 500px;
+}
+
+#header{
+    font-weight: 400;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-family: $font-main !important;
+}
+
+#services{
+    background: $background;
+    width: 100% !important;
+    margin: 100px 0 100px !important;
+}
+
+.headers{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+
+    p{
+        font-weight: 700 !important;
+        color: $info;
+        text-transform: uppercase;
+    }
+
+    h2{
+        font-weight: 400;
+        font-size: 45px;
+    }
+}
+
+#fourSquare{
+    width: 100%;
+    margin: 0 !important;
+    padding: 0;
+    min-height: 500px;
+
+}
+
+.split{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+}
+
+.blank{
+    min-height: 400px;
+    max-width: 50%;
+    background-color: $primary;
+    flex: 1;
+    color: $text-color-white !important;
+    padding: 60px 80px !important;
+
+    h3{
+        font-family: $font-main;
+        font-size: 35px;
+        color: $text-color-white;
+        margin-bottom: 30px;
+    }
+
+    p{
+        text-justify: inter-word;
+        text-align: justify;
+        font-weight: 400 !important;
+    }
+
+    .button{
+        background-color: $warning !important;
+        box-shadow: 1px 2px 4px 1px rgba($color: #c6c6c6, $alpha: 1.0);
+        margin-top: 30px;
+        &:hover{
+            color: $text-color-white;
+        }
+    }
+}
+
+#image1{
+    min-height: 250px;
+    max-width: 50%;
+    flex: 1;
+    background-image: url("https://dev.smilesdotcom.ng/wp-content/uploads/2020/09/Celeb-Smile.jpg?id=1219");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+#image2{
+    min-height: 250px;
+    max-width: 50%;
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("https://dev.smilesdotcom.ng/wp-content/uploads/2020/09/Celeb-Smile.jpg?id=1219");
+}
+
+#why{
+    background-color: $white-background;
+    padding: 70px 30px;
+    #why_cont{
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
+
+        .button{
+            background-color: $warning !important;
+            box-shadow: 1px 2px 4px 1px rgba($color: #c6c6c6, $alpha: 1.0);
+            margin-top: 0px;
+            &:hover{
+                color: $text-color-white;
+            }
+        }
+    }
+}
+
+#testimonial_cont{
+    width: 100%;
+    padding-bottom: 120px;
+}
+
+#map{
+    height: 50vh;
+    width: 100%;
+}
+

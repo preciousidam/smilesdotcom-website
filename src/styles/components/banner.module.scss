@@ -1,0 +1,80 @@
+@import '../variables.scss';
+
+#banner{
+    height: 250px;
+    min-height: 300px;
+    width: 100%;
+    background-image: url('../../assets/banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    #overlay{
+        background-color: rgba($color: #000000, $alpha: .4);
+        
+        height: inherit !important;
+        min-height: inherit !important;
+       
+    }
+
+    #content{
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+
+        h1{
+            font-family: $font-main;
+            font-size: 50px;
+            color: $text-color-white;
+        }
+    }
+}
+
+
+
+///////////////////////////////MAP BANNER////////////////////////////
+
+#banner_map{
+    margin-top: 76px;
+    height: 60vh;
+    min-height: 60vh;
+    width: 100%;
+    background-image: url('../../assets/banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    #overlay{
+        background-color: rgba($color: #000000, $alpha: .4);
+        position: absolute;
+        height: 100% !important;
+        min-height: 100% !important;
+       
+    }
+
+    #content{
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+
+        h1{
+            font-family: $font-main;
+            font-size: 50px;
+            color: $text-color-white;
+        }
+    }
+}

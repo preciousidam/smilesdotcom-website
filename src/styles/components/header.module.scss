@@ -1,0 +1,50 @@
+@import '../variables.scss';
+
+#header{
+    margin: 0 !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $white-background;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 1000;
+    box-shadow: 0 0 8px 0 rgba($color: #000000, $alpha: .4);
+    padding: 12px 20px;
+}
+
+
+
+#brand{
+    width: 100px;
+    height: 50px;
+}
+#logo{
+    width: 100px;
+    height: 50px;
+}
+
+.nav_right{
+    list-style-type: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline-flex;
+}
+
+.links{
+    color: $text-color !important;
+    margin: 0 10px;
+}
+.navLink{
+    text-decoration: none !important;
+    color: $text-color !important;
+    font-family: $font-main;
+    font-weight: 500;
+}
+
+.active{
+    color: $primary !important;
+}
