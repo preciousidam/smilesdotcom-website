@@ -21,10 +21,10 @@ const Slider = () => {
 		}
 		slideIndex++;
 		if (slideIndex > x.length) {slideIndex = 1}
-		if (x[slideIndex-1] != null || x[slideIndex-1] != undefined){
+		if (x[slideIndex-1] != null || x[slideIndex-1] !== undefined){
 			x[slideIndex-1].style.display = "block";
 		}
-		setTimeout(carousel, 4700); // Change image every 4.7 seconds
+		setTimeout(carousel, duration); // Change image every 4.7 seconds
 		}
 	}
 

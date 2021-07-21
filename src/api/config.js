@@ -1,3 +1,3 @@
 export const apiConfig = {
-    baseUrl: `http://localhost:5000/api/v1/`,
+    baseUrl: `https://smilesdotcom-api.herokuapp.com/api/v1/`,
 }
