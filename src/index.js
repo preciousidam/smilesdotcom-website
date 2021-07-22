@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab, faFacebookF, faTwitter, faGooglePlusG,faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { fas, faArrowRight, faMapMarkedAlt, faPhoneAlt, faEnvelope, faPaperPlane, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { fas, faArrowRight, faMapMarkedAlt, faPhoneAlt, faEnvelope, faPaperPlane, faSpinner, faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import {far} from '@fortawesome/free-regular-svg-icons';
 import './styles/index.scss';
 import App from './App';
@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 
 library.add(fab, far, fas, faInstagram, faTwitter, 
             faGooglePlusG, faFacebookF, faArrowRight, faMapMarkedAlt, 
-            faPhoneAlt, faEnvelope, faPaperPlane, faSpinner
+            faPhoneAlt, faEnvelope, faPaperPlane, faSpinner, faAngleRight, faAngleLeft
             )
 
 ReactDOM.render(
