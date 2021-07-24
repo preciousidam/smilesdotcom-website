@@ -1,10 +1,10 @@
 import {Link} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import styled from '@emotion/styled';
-import styles from '../../styles/components/button.module.scss';
 import {faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 const SolidButton = styled.button({
+    cursor: 'pointer',
     minWidth: '150px',
     padding: '15px 10px',
     display: 'inline-flex',
@@ -39,6 +39,7 @@ const SolidButton = styled.button({
 );
 
 const LButton = styled(Link)({
+    cursor: 'pointer',
     minWidth: '150px',
     padding: '15px 10px',
     display: 'inline-flex',
@@ -87,7 +88,7 @@ export  const LinkButton = ({link, title, animation_class, delay, className, onC
 
     return(
         <SolidButton
-            className={`animate__animated animate__delay-${delay}s ${styles.button} ${className}`}
+            className={`animate__animated animate__delay-${delay}s ${className}`}
             onClick={onClick}
             {...rest}
         >   

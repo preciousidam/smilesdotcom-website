@@ -150,7 +150,12 @@ export const Contents = props => {
 		<div className={props.contentStyle}>
 			<h1 className={props.headerStyle}>{props.header}</h1>
 			<div className={props.subStyle} dangerouslySetInnerHTML={{__html: props.body}}/>
-			<LinkButton color={props.button.color} link={props.link} title={props.title} delay={2} animation_class="animate__fadeIn" />
+			<LinkButton 
+				color={props.button.color} 
+				link={props.link} title={props.title} 
+				delay={2} 
+				animation_class="animate__fadeIn" 
+			/>
 		</div>
 	)
 }

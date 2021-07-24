@@ -83,7 +83,7 @@
 
     p{
         font-weight: 700 !important;
-        color: $info;
+        color: $primary;
         text-transform: uppercase;
     }
 
@@ -111,22 +111,16 @@
 .blank{
     min-height: 400px;
     max-width: 50%;
-    background-color: $primary;
+    background-color: #000000;
     flex: 1;
     color: $text-color-white !important;
-    padding: 60px 80px !important;
+    padding: 60px 40px !important;
 
     h3{
         font-family: $font-main;
         font-size: 35px;
         color: $text-color-white;
         margin-bottom: 30px;
-    }
-
-    p{
-        text-justify: inter-word;
-        text-align: justify;
-        font-weight: 400 !important;
     }
 
     .button{
@@ -143,7 +137,7 @@
     min-height: 250px;
     max-width: 50%;
     flex: 1;
-    background-image: url("https://dev.smilesdotcom.ng/wp-content/uploads/2020/09/Celeb-Smile.jpg?id=1219");
+    background-image: url("../assets/celeb.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -156,12 +150,12 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url("https://dev.smilesdotcom.ng/wp-content/uploads/2020/09/Celeb-Smile.jpg?id=1219");
+    background-image: url("../assets/insurance.jpeg");
 }
 
 #why{
     background-color: $white-background;
-    padding: 70px 30px;
+    padding: 50px 5px;
     #why_cont{
         display: flex;
         justify-content: center; 

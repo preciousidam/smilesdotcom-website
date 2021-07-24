@@ -4,11 +4,13 @@ import styled from '@emotion/styled';
 
 import { AppointmentForm } from '../components/appointment';
 import { LinkButton } from '../components/buttons';
-import { Services, Whys } from '../components/services';
+import { Services } from '../components/services';
+import { Whys } from '../components/services/why';
 import Sliders from '../components/slides';
 import { Testimonials } from '../components/testimonials';
 import styles from '../styles/index.module.scss';
 import { Footer } from '../components/footer';
+import { fontMain, textColorWhite } from '../assets/colors';
 
 const Welcome = styled.p({
     fontWeight: '500',
@@ -25,11 +27,23 @@ const Smilesdotcom = styled.h2({
 const Body = styled.p({
     textAlign: 'justify',
     textJustify: 'inter-word',
-    maxWidth: '500px',
-    fontSize: '18px',
+    fontSize: '14.5px',
     fontWeight: '400',
-    fontFamily: 'Montserrat'
+    fontFamily: 'Montserrat',
+    marginBottom: "60px 0 "
+});
+
+const CelebText = styled.h3({
+    fontFamily: fontMain,
+    fontSize: '35px',
+    color: textColorWhite,
+    margin: '0 !important',
+});
+
+const CeleInner = styled(CelebText)({
+    color: '#FF8A90 !important',
 })
+
 
 export const Index = ({}) => {
 
@@ -70,7 +84,10 @@ export const Index = ({}) => {
                 <div className={styles.split}>
                     <div id={styles.image1}></div>
                     <div className={styles.blank} >
-                        <p>
+                        <CelebText>
+                            GET A CELEBRITY SMILE – <CeleInner>STARTING FROM 10,000</CeleInner>
+                        </CelebText>
+                        <Body style={{marginTop: 15, marginBottom: 60}}>
                             Celebrities like Nosa, Tim Godfrey, Mercy Chinwo, 
                             Pastor Kingsley and Mildred Okonkwo, Rob and Mayowa Ekpo, 
                             Lolo and Ogbolor (popularly known as Adaku and James in Jenifa’s Diary), 
@@ -78,18 +95,18 @@ export const Index = ({}) => {
                             MC Acapella, Kunle Remi, Minister Kenn, Bettina, Preye Odede, Mairo Ese, 
                             Olive Modi, and many others, have enjoyed this unsurpassed dental experience – 
                             you too should!
-                        </p>
-                        <LinkButton link="/#" title="More Details" className={styles.button} />
+                        </Body>
+                        <LinkButton link="/#" title="More Details" />
                     </div>
                 </div>
                 <div className={styles.split}>
                     <div className={styles.blank}>
-                        <h3>COVERED BY INSURANCE</h3>
-                        <p>
+                        <CelebText>COVERED BY INSURANCE</CelebText>
+                        <Body style={{marginTop: 15, marginBottom: 60}}>
                             We accept many HMO plans. Click the link below to see if your 
-                            insurance company is listed then book an appointment right away.
-                        </p>
-                        <LinkButton link="/#" title="More Details" className={styles.button} />
+                            <p>insurance company is listed then book an appointment right away.</p>
+                        </Body>
+                        <LinkButton link="/#" title="More Details" />
                     </div>
                     <div id={styles.image2} ></div>
                 </div>
@@ -101,7 +118,6 @@ export const Index = ({}) => {
                 </header>
                 <div id={styles.why_cont}>
                     <Whys />
-                    <LinkButton link="/#" title="Learn More" className={styles.button} />
                 </div>
             </section>
             <section id={styles.testimonial_cont}>

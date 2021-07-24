@@ -37,7 +37,7 @@ export const Footer = () => {
                     <div className={styles.contact}>
                         <p>
                             <FontAwesomeIcon icon={['fas', 'map-marked-alt']} size="sm" />  
-                            <span>Plot 20 Block 77 Admiralty Way, Lekki phase 1, Lagos State</span>
+                            <span>3 Admiralty Road, Lekki phase 1, Lagos State</span>
                         </p>
                         <p>
                             <FontAwesomeIcon icon={['fas', 'envelope']} size="sm" />
