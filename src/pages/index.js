@@ -27,11 +27,15 @@ const Smilesdotcom = styled.h2({
 const Body = styled.p({
     textAlign: 'justify',
     textJustify: 'inter-word',
-    fontSize: '14.5px',
+    fontSize: '17px',
     fontWeight: '400',
     fontFamily: 'Montserrat',
     marginBottom: "60px 0 "
 });
+
+const CelebBody = styled(Body)({
+    fontSize: '14.5px',
+})
 
 const CelebText = styled.h3({
     fontFamily: fontMain,
@@ -42,6 +46,7 @@ const CelebText = styled.h3({
 
 const CeleInner = styled(CelebText)({
     color: '#FF8A90 !important',
+    fontSize: '26px !important',
 })
 
 
@@ -85,9 +90,9 @@ export const Index = ({}) => {
                     <div id={styles.image1}></div>
                     <div className={styles.blank} >
                         <CelebText>
-                            GET A CELEBRITY SMILE – <CeleInner>STARTING FROM 10,000</CeleInner>
+                            GET A CELEBRITY SMILE <CeleInner>STARTING FROM &#8358;15,000</CeleInner>
                         </CelebText>
-                        <Body style={{marginTop: 15, marginBottom: 60}}>
+                        <CelebBody style={{marginTop: 15, marginBottom: 60}}>
                             Celebrities like Nosa, Tim Godfrey, Mercy Chinwo, 
                             Pastor Kingsley and Mildred Okonkwo, Rob and Mayowa Ekpo, 
                             Lolo and Ogbolor (popularly known as Adaku and James in Jenifa’s Diary), 
@@ -95,17 +100,17 @@ export const Index = ({}) => {
                             MC Acapella, Kunle Remi, Minister Kenn, Bettina, Preye Odede, Mairo Ese, 
                             Olive Modi, and many others, have enjoyed this unsurpassed dental experience – 
                             you too should!
-                        </Body>
+                        </CelebBody>
                         <LinkButton link="/#" title="More Details" />
                     </div>
                 </div>
                 <div className={styles.split}>
                     <div className={styles.blank}>
                         <CelebText>COVERED BY INSURANCE</CelebText>
-                        <Body style={{marginTop: 15, marginBottom: 60}}>
+                        <CelebBody style={{marginTop: 15, marginBottom: 60}}>
                             We accept many HMO plans. Click the link below to see if your 
                             <p>insurance company is listed then book an appointment right away.</p>
-                        </Body>
+                        </CelebBody>
                         <LinkButton link="/#" title="More Details" />
                     </div>
                     <div id={styles.image2} ></div>

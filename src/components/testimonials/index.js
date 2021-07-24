@@ -66,10 +66,12 @@ const Quote = styled.p({
     verticalAlign: 'middle',
     padding: '8px',
     fontFamily: 'Montserrat',
-    margin: '40px',
+    margin: '20px',
 });
 
 const Body = styled.p({
+    fontWeight: '400',
+    fontSize: '13px',
     wordBreak: 'break-word',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
