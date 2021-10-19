@@ -49,6 +49,7 @@ const Slider = () => {
 	const {data, error} = useSWR('banners/', getData);
 	const [done, setDone] = useState(false);
 	const timeRef = useRef();
+	const outOfPage = useRef(false);
 	const slideIndex = useRef(0);
 	const fadeOutRef = useRef();
 
@@ -84,6 +85,10 @@ const Slider = () => {
 		carousel();
 
 		function carousel() {
+			if(outOfPage.current === true){
+				return;
+			}
+
 			setDone(true);
 			let i;
 			let x = document.getElementsByClassName("heroSlides");
@@ -103,6 +108,12 @@ const Slider = () => {
 
 	useEffect(() => {
 		setTimeout(startAnimation, 5000);
+		return () => {
+			outOfPage.current = true;
+			clearInterval(fadeOutRef.current);
+			clearTimeout(timeRef.current);
+			clearInterval(outOfPage.current)
+		}
 	},[])
 	
   	return (

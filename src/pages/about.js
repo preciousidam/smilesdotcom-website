@@ -4,8 +4,8 @@ import { ContactForm } from '../components/appointment/contactForm';
 import { MapBanner, Banner } from '../components/banner';
 import { Footer } from '../components/footer';
 import styles from '../styles/contact.module.scss';
-import image1 from '../assets/Our Services/corporate-Services.jpg';
-import image2 from '../assets/Our Services/In-patient-Services.jpg';
+import image1 from '../assets/Services/corporate-Services.jpg';
+import image2 from '../assets/Services/In-patient-Services.jpg';
 
 export const Contact = ({}) => {
 

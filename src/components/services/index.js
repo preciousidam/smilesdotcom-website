@@ -83,7 +83,7 @@ export const Service = ({image_path, title, body, delay, animation}) => {
             onMouseOver={() => setHover(true)}
             onMouseOut={() => setHover(false)}
         >
-            <Image src={`https://smilesdotcom-api.herokuapp.com${image_path}`} alt="service" />
+            <Image src={`https://smilesdotcom-api.herokuapp.com${encodeURIComponent(image_path)}`} alt="service" />
             <Content>
                 <Title hover={hover}>{title}</Title>
                 <Body dangerouslySetInnerHTML={{__html: body}} />
