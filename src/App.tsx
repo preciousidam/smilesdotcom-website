@@ -1,6 +1,7 @@
 import React, {lazy} from 'react';
 import './styles/App.scss';
 import ErrorBoundary from './components/errorboundary';
+import {QueryClient, QueryClientProvider} from 'react-query';
 import AppNavigation  from './components/navigation';
 import { CustomRoute } from './components/navigation/routes';
 
@@ -27,16 +28,19 @@ const routes = [
 	},
 ]
 
+const queryClient = new QueryClient();
 
 function App() {
 	return (
-		<div className="App">
-			<ErrorBoundary>
-				<AppNavigation>
-					{routes.map((route, i) => <CustomRoute key={i} {...route} />)}
-				</AppNavigation>
-			</ErrorBoundary>
-		</div>
+		<QueryClientProvider client={queryClient}>
+			<div className="App">
+				<ErrorBoundary>
+					<AppNavigation>
+						{routes.map((route, i) => <CustomRoute key={i} {...route} />)}
+					</AppNavigation>
+				</ErrorBoundary>
+			</div>
+		</QueryClientProvider>
 	);
 }
 

@@ -15,11 +15,18 @@
         align-items: flex-start;
         padding: 20px 0px 20px;
 
+        @media (max-width: 900px) {
+            flex-direction: column;
+        }
+
         .sec{
             flex: 1;
             width: 400px;
             color: $text-color-white !important;
             margin: 10px;
+            @media (max-width: 900px) {
+                width: 100%;
+            }
 
             .header{
                 h4{

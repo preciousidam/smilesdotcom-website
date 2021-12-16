@@ -3,6 +3,10 @@ import styled from '@emotion/styled';
 import {getData} from '../../hook';
 import { primary, textColor } from '../../assets/colors';
 import { useState } from 'react';
+import corporate from '../../assets/Services/corporate.jpeg'
+import inpatient from '../../assets/Services/inpatient.jpeg'
+import mobile from '../../assets/Services/mobile.jpeg'
+import outreach from '../../assets/Services/outreach.jpeg'
 
 
 const Row = styled.div({
@@ -12,7 +16,11 @@ const Row = styled.div({
     alignItems: 'center',
     padding: '10px 30px',
     marginBottom: '50px',
-    width: '100%'
+    width: '100%',
+
+    '@media(max-width: 900px)': {
+        flexDirection: 'column',
+    }
 });
 
 const Card = styled.div({
@@ -24,6 +32,10 @@ const Card = styled.div({
 
     '&:hover': {
         boxShadow: '2px 4px 6px 2px rgba(198, 198, 198, .5)',
+    },
+
+    '@media(max-width: 900px)': {
+        margin: '20px 0'
     }
 });
 
@@ -39,7 +51,7 @@ const Content = styled.div({
 });
 
 const Title = styled.h4({
-    textAlign: 'center',
+    textAlign: 'center'
 }, props => ({
     color: props.hover ? primary: textColor,
 }));
@@ -62,31 +74,53 @@ const Body = styled.div({
     '& > p':{
         margin: 0,
         padding: 0,       
-    } 
+    }
 });
 
+const allServices = [
+    {
+        image: inpatient,
+        header: "In-Patient Services",
+        body: "Our serene and highly-equipped dental studio is designed to deliver unsurpassed dental solutions to both simple to complex cases."
+    },
+    {
+        image: mobile,
+        header: "Mobile Services",
+        body: "Through our mobile clinic, we deliver convenient dental solutions to our clients, whenever and wherever they want it, at reasonable prices."
+    },
+    {
+        image: corporate,
+        header: "Corporate Services",
+        body: "We partner with health-conscious organizations to provide special dental care for their staffs within the comfort of their workplace."
+    },
+    {
+        image: outreach,
+        header: "Outreach Support",
+        body: "Individuals and companies organizing outreach events can also engage our services to provide basic dental care for their beneficiaries."
+    },
+]
+
 export const Services = () => {
-    const {data, error} = useSWR('services/', getData);
     
     return (
         <Row>
-            {!error && data && data?.data?.map((service, i) => <Service key={service.header+i} delay={i+1} {...service} />)}
+            {allServices.map((service, i) => <Service key={service.header+i} delay={i+1} {...service} />)}
         </Row>
     )
 }
 
-export const Service = ({image_path, title, body, delay, animation}) => {
+export const Service = ({image, title, body, delay}) => {
     const [hover, setHover] = useState(false);
     return (<Card 
-            className={`animate__animated animate__delay-${delay}s ${animation}`}
+            className={`animate__animated animate__delay-${delay}s animate__fadeIn`}
             onClick={() => window.location.href='/services'}
             onMouseOver={() => setHover(true)}
             onMouseOut={() => setHover(false)}
         >
-            <Image src={`https://smilesdotcom-api.herokuapp.com${encodeURIComponent(image_path)}`} alt="service" />
+            <Image src={image} alt="service" />
             <Content>
                 <Title hover={hover}>{title}</Title>
-                <Body dangerouslySetInnerHTML={{__html: body}} />
+                <Body>{body}</Body>
             </Content>
         </Card>
     );

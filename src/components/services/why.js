@@ -30,6 +30,8 @@ const allWhy = [
     },
 ]
 
+
+
 const Row = styled.div({
     display: 'flex',
     flexDirection: 'row',
@@ -37,7 +39,11 @@ const Row = styled.div({
     alignItems: 'center',
     padding: '10px 30px',
     marginBottom: '50px',
-    width: '100%'
+    width: '100%',
+    '@media(max-width: 900px)': {
+        flexDirection: 'column',
+        marginBottom: 0,
+    }
 });
 
 const Card = styled.div({
@@ -48,6 +54,10 @@ const Card = styled.div({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    '@media(max-width: 900px)': {
+        width: '100%',
+        marginBottom: '0px'
+    }
 });
 
 const Image = styled.img({
@@ -67,6 +77,9 @@ const Title = styled.h4({
     fontWeight: 700,
     marginBottom: '30px',
     minHeight: '70px',
+    '@media(max-width: 900px)': {
+        margin: '0'
+    }
 });
 
 const Body = styled.div({
@@ -75,6 +88,9 @@ const Body = styled.div({
     fontFamily: 'Open Sans',
     fontWeight: '400',
     marginTop: '10px',
+    '@media(max-width: 900px)': {
+        margin: '0'
+    }
 });
 
 

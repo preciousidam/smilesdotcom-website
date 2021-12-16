@@ -42,6 +42,10 @@ const Container = styled.div({
     padding: '0 !important',
     margin: '0 !important',
     position: 'relative',
+
+	'@media(max-width: 900px)': {
+		height: '50vh !important'
+	}
 })
 
 const Slider = () => {
@@ -134,7 +138,7 @@ const Slider = () => {
 								body={body}
 								link={`/${button}`}
 								title={button_text}
-								contentStyle={text_align == 'left' ? styles.contents : styles.contents_to_right}
+								contentStyle={text_align === 'left' ? styles.contents : styles.contents_to_right}
 								headerStyle={`animate__animated animate__delay-1s ${animation} ${text_color === 'light' ? styles.header_white : styles.header_black} ${i === 0 || i === 2? styles.shrink: ''}`}
 								subStyle={`animate__animated animate__delay-1.5s ${animation} ${text_color === 'light' ? styles.sub_white : styles.sub_darker}`}
 								button={{color: i === 0 || i === 2 ? '#FF3D6D': '#00bfeb'}}
